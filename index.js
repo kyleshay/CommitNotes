@@ -26,7 +26,12 @@ async function run() {
 
     fs.writeFileSync(
       changelog,
-      `${data.slice(0, index)}* ${notes[1].trim()}(#${number})\n${data.slice(index)}`,
+      `${data.slice(
+        0,
+        index,
+      )}* ${notes[1].trim()} [https://github.com/DestinyItemManager/DIM/pull/${number}](#${number})\n${data.slice(
+        index,
+      )}`,
     );
   } catch (error) {
     core.setFailed(`${error.message}`);
