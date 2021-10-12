@@ -1,0 +1,21 @@
+on:
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+
+jobs:
+  changelog_job:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    name: Update CHANGELOG.md
+    steps:
+      - name: "Load Repo"
+        uses: actions/checkout@v2
+      - name: Modify CHANGELOG.md
+        uses: kyleshay/gh-l@master
+      - name: Commit CHANGELOG.md
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: master
+          commit_message: Update from pull request

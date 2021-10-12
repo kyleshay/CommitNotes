@@ -1,0 +1,9 @@
+name: Update Changelog
+description: Updates the CHANGELOG.md file
+inputs:
+  changelog:
+    description: "Location of CHANGELOG.md"
+    default: ./docs/CHANGELOG.md
+runs:
+  using: "node12"
+  main: "index.js"
