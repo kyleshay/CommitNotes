@@ -29,7 +29,7 @@ async function run() {
       `${data.slice(
         0,
         index,
-      )}* ${notes[1].trim()} [https://github.com/DestinyItemManager/DIM/pull/${number}](#${number})\n${data.slice(
+      )}* ${notes[1].trim()} [#${number}](https://github.com/DestinyItemManager/DIM/pull/${number})\n${data.slice(
         index,
       )}`,
     );
